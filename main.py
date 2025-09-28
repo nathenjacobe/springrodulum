@@ -104,7 +104,6 @@ def derivatives(state):
 
     A = [a_r, a_theta, a_phi]
 
-
     r_ddot, theta_ddot, phi_ddot = apply(invert(M), A)
 
     return [r_dot, theta_dot, phi_dot, r_ddot, theta_ddot, phi_ddot]
