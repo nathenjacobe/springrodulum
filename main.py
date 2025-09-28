@@ -196,8 +196,8 @@ def main():
         draw_spring(screen, (center_x, center_y), (x1, y1))
         pygame.draw.line(screen, WHITE, (x1, y1), (x2, y2), 4)
 
-        radius_m1 = int(BASE_SIZE * (m1 / (m1 + m2)) * 2)  # Scale based on mass
-        radius_m2 = int(BASE_SIZE * (m2 / (m1 + m2)) * 2)  # Scale based on mass
+        radius_m1 = int(BASE_SIZE * (m1 / (m1 + m2)) * 2)
+        radius_m2 = int(BASE_SIZE * (m2 / (m1 + m2)) * 2)
 
         pygame.draw.circle(screen, RED, (int(x1), int(y1)), radius_m1)
         pygame.draw.circle(screen, BLUE, (int(x2), int(y2)), radius_m2)
