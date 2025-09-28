@@ -5,8 +5,8 @@ import sys
 
 pygame.init()
 
-WIDTH = 1000
-HEIGHT = 800
+WIDTH = 600
+HEIGHT = 600
 
 BASE_SIZE = 8
 BLACK = (10, 10, 20)
@@ -19,21 +19,21 @@ TRAIL_RED = (200, 50, 50)
 TRAIL_BLUE = (50, 100, 200)
 
 m1 = 1.0
-m2 = 1.0
+m2 = 1.5
 l0 = 1.25
 R = 1.5
 g = 9.81
 k = 100.0
 dt = 0.01
-
 r = 2.0
-theta = pi / 3
-phi = pi / 2
+
+theta = pi/2
+phi = pi/3
 r_dot = 0.0
 theta_dot = 0.0
 phi_dot = 0.0
-global_time = 0
 
+global_time = 0
 def invert(m):
     a = m
     det = (a[0][0] * (a[1][1] * a[2][2] - a[1][2] * a[2][1]) -
