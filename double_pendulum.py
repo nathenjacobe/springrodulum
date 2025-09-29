@@ -30,7 +30,7 @@ theta_dot = 0.0
 phi_dot = 0.0
 global_time = 0.0
 
-def invert_2x2(m):
+def invert(m):
 
     a, b = m[0][0], m[0][1]
     c, d = m[1][0], m[1][1]
@@ -43,7 +43,7 @@ def invert_2x2(m):
         [-c * inv_det,  a * inv_det]
     ]
 
-def mat_apply(m, v):
+def apply(m, v):
     return [
         m[0][0] * v[0] + m[0][1] * v[1],
         m[1][0] * v[0] + m[1][1] * v[1],
@@ -65,8 +65,7 @@ def derivatives(state):
 
     A = [A1, A2]
 
-    invM = invert_2x2(M)
-    theta_ddot, phi_ddot = mat_apply(invM, A)
+    theta_ddot, phi_ddot = apply(invert(M), A)
 
     return [theta_dot, phi_dot, theta_ddot, phi_ddot]
 
